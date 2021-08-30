@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace T4i_WebAPI.model
 {
     public class Dev
@@ -6,7 +8,7 @@ namespace T4i_WebAPI.model
         {
             
         }
-        public Dev(int myProperty, int id, string name, string position)
+        public Dev(int id, string name, string position)
         {
             this.id = id;
             this.name = name;
@@ -16,5 +18,7 @@ namespace T4i_WebAPI.model
         public int id { get; set; }
         public string name { get; set; }
         public string position { get; set; }
+
+        public IEnumerable <Projeto> projetos {get; set;}
     }
 }

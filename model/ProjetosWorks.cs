@@ -6,7 +6,7 @@ namespace T4i_WebAPI.model
         {
 
         }
-        public ProjetosWorks(Projeto projeto, int worksId)
+        public ProjetosWorks(int projetoId, int worksId)
         {
             this.projetoId = projetoId;    
             this.worksId = worksId;          

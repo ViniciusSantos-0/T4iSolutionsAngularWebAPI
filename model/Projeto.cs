@@ -6,7 +6,7 @@ namespace T4i_WebAPI.model
         {
             
         }
-        public Projeto(int myProperty, int id, string description)
+        public Projeto( int id, string description)
         {        
             this.id = id;
             this.description = description;

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\vinic\\Documents\\T4i Solutions\\Angular\\T4i-WebAPI\\T4i-WebAPI.csproj": {}
+    "C:\\Users\\vinic\\Documents\\T4i Solutions\\Angular\\T4i-WebAPI\\T4i-WebAPI.csproj": {}
   },
   "projects": {
-    "c:\\Users\\vinic\\Documents\\T4i Solutions\\Angular\\T4i-WebAPI\\T4i-WebAPI.csproj": {
+    "C:\\Users\\vinic\\Documents\\T4i Solutions\\Angular\\T4i-WebAPI\\T4i-WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\vinic\\Documents\\T4i Solutions\\Angular\\T4i-WebAPI\\T4i-WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\vinic\\Documents\\T4i Solutions\\Angular\\T4i-WebAPI\\T4i-WebAPI.csproj",
         "projectName": "T4i-WebAPI",
-        "projectPath": "c:\\Users\\vinic\\Documents\\T4i Solutions\\Angular\\T4i-WebAPI\\T4i-WebAPI.csproj",
+        "projectPath": "C:\\Users\\vinic\\Documents\\T4i Solutions\\Angular\\T4i-WebAPI\\T4i-WebAPI.csproj",
         "packagesPath": "C:\\Users\\vinic\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\vinic\\Documents\\T4i Solutions\\Angular\\T4i-WebAPI\\obj\\",
+        "outputPath": "C:\\Users\\vinic\\Documents\\T4i Solutions\\Angular\\T4i-WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -65,7 +65,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[5.6.3, )"
+              "version": "[6.1.5, )"
             }
           },
           "imports": [
