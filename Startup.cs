@@ -24,7 +24,9 @@ namespace T4i_WebAPI
             services.AddDbContext<DataContext>(
                 x => x.UseSqlite(Configuration.GetConnectionString("DefaultConn"))
             );
-            services.AddControllers();
+            services.AddControllers()
+            .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling =
+            Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddScoped<IRepository, Repository>();
             services.AddSwaggerGen(c =>
             {
@@ -46,7 +48,7 @@ namespace T4i_WebAPI
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

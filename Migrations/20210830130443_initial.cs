@@ -27,18 +27,11 @@ namespace T4i_WebAPI.Migrations
                     id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     name = table.Column<string>(type: "TEXT", nullable: true),
-                    description = table.Column<string>(type: "TEXT", nullable: true),
-                    Devid = table.Column<int>(type: "INTEGER", nullable: true)
+                    description = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_projetos", x => x.id);
-                    table.ForeignKey(
-                        name: "FK_projetos_dev_Devid",
-                        column: x => x.Devid,
-                        principalTable: "dev",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -47,8 +40,7 @@ namespace T4i_WebAPI.Migrations
                 {
                     id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    idDev = table.Column<int>(type: "INTEGER", nullable: false),
-                    devid = table.Column<int>(type: "INTEGER", nullable: true)
+                    devid = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -58,7 +50,7 @@ namespace T4i_WebAPI.Migrations
                         column: x => x.devid,
                         principalTable: "dev",
                         principalColumn: "id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -70,7 +62,7 @@ namespace T4i_WebAPI.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_pw", x => new { x.worksId, x.projetoId });
+                    table.PrimaryKey("PK_pw", x => new { x.projetoId, x.worksId });
                     table.ForeignKey(
                         name: "FK_pw_projetos_projetoId",
                         column: x => x.projetoId,
@@ -132,53 +124,53 @@ namespace T4i_WebAPI.Migrations
 
             migrationBuilder.InsertData(
                 table: "projetos",
-                columns: new[] { "id", "Devid", "description", "name" },
-                values: new object[] { 5, null, "Planejar, estruturar e criar um sistema inovador", "Create An Innovative System" });
+                columns: new[] { "id", "description", "name" },
+                values: new object[] { 1, "Rede de contatos e negócios", "NetWorks" });
 
             migrationBuilder.InsertData(
                 table: "projetos",
-                columns: new[] { "id", "Devid", "description", "name" },
-                values: new object[] { 4, null, "Melhorias em nosso sistema", "Upgrade Our System" });
+                columns: new[] { "id", "description", "name" },
+                values: new object[] { 2, "Sistema para administração de serviços", "System For T4i" });
 
             migrationBuilder.InsertData(
                 table: "projetos",
-                columns: new[] { "id", "Devid", "description", "name" },
-                values: new object[] { 1, null, "Rede de contatos e negócios", "NetWorks" });
+                columns: new[] { "id", "description", "name" },
+                values: new object[] { 3, "Sistema para verificar pré-requisitos de padrões de arquitetura dentro de um software", "System For Google" });
 
             migrationBuilder.InsertData(
                 table: "projetos",
-                columns: new[] { "id", "Devid", "description", "name" },
-                values: new object[] { 2, null, "Sistema para administração de serviços", "System For T4i" });
+                columns: new[] { "id", "description", "name" },
+                values: new object[] { 4, "Melhorias em nosso sistema", "Upgrade Our System" });
 
             migrationBuilder.InsertData(
                 table: "projetos",
-                columns: new[] { "id", "Devid", "description", "name" },
-                values: new object[] { 3, null, "Sistema para verificar pré-requisitos de padrões de arquitetura dentro de um software", "System For Google" });
+                columns: new[] { "id", "description", "name" },
+                values: new object[] { 5, "Planejar, estruturar e criar um sistema inovador", "Create An Innovative System" });
 
             migrationBuilder.InsertData(
                 table: "works",
-                columns: new[] { "id", "devid", "idDev" },
-                values: new object[] { 4, null, 2 });
+                columns: new[] { "id", "devid" },
+                values: new object[] { 1, 2 });
 
             migrationBuilder.InsertData(
                 table: "works",
-                columns: new[] { "id", "devid", "idDev" },
-                values: new object[] { 1, null, 2 });
+                columns: new[] { "id", "devid" },
+                values: new object[] { 2, 3 });
 
             migrationBuilder.InsertData(
                 table: "works",
-                columns: new[] { "id", "devid", "idDev" },
-                values: new object[] { 2, null, 3 });
+                columns: new[] { "id", "devid" },
+                values: new object[] { 3, 5 });
 
             migrationBuilder.InsertData(
                 table: "works",
-                columns: new[] { "id", "devid", "idDev" },
-                values: new object[] { 3, null, 5 });
+                columns: new[] { "id", "devid" },
+                values: new object[] { 4, 8 });
 
             migrationBuilder.InsertData(
                 table: "works",
-                columns: new[] { "id", "devid", "idDev" },
-                values: new object[] { 5, null, 9 });
+                columns: new[] { "id", "devid" },
+                values: new object[] { 5, 9 });
 
             migrationBuilder.InsertData(
                 table: "pw",
@@ -206,14 +198,9 @@ namespace T4i_WebAPI.Migrations
                 values: new object[] { 5, 5 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_projetos_Devid",
-                table: "projetos",
-                column: "Devid");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_pw_projetoId",
+                name: "IX_pw_worksId",
                 table: "pw",
-                column: "projetoId");
+                column: "worksId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_works_devid",

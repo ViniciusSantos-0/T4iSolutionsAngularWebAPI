@@ -22,6 +22,8 @@ namespace T4i_WebAPI.Data
         //Dev
 
         Task<Dev[]> GetAllDevsAsync(bool includeProjeto);
-        Task<Dev> GetDevAsyncById(int devId, bool includeProjeto);
+        Task<Dev> GetDevAsyncById(int devid, bool includeProjeto);
+
+        Task<Dev[]> GetDevsAsyncByProjetoId(int projetoId, bool includeWorks);
     }
 }

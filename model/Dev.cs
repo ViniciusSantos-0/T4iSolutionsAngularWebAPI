@@ -19,6 +19,6 @@ namespace T4i_WebAPI.model
         public string name { get; set; }
         public string position { get; set; }
 
-        public IEnumerable <Works> works {get; set;}
+        public IEnumerable<Works> works {get; set;}
     }
 }

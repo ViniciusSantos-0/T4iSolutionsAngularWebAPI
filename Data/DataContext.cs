@@ -18,7 +18,7 @@ namespace T4i_WebAPI.Data
         public DbSet<ProjetosWorks> pw { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<ProjetosWorks>().HasKey(AD => new { AD.worksId, AD.projetoId });
+            builder.Entity<ProjetosWorks>().HasKey(AD => new { AD.projetoId , AD.worksId });
 
             builder.Entity<Dev>().HasData(new List<Dev>(){
             new Dev(1,"Alessandro Bezerra","Engenheiro de Dados"),
@@ -43,16 +43,15 @@ namespace T4i_WebAPI.Data
             new Works(1,2),
             new Works(2,3),
             new Works(3,5),
-            new Works(4,2),
-            new Works(5,9)
+            new Works(4,8),
+            new Works(5,9),
         });
             builder.Entity<ProjetosWorks>().HasData(new List<ProjetosWorks>(){
             new ProjetosWorks(){projetoId = 1, worksId = 1},
             new ProjetosWorks(){projetoId = 2, worksId = 4},
             new ProjetosWorks(){projetoId = 3, worksId = 3},
             new ProjetosWorks(){projetoId = 4, worksId = 2},
-            new ProjetosWorks(){projetoId = 5, worksId = 5},
-            
+            new ProjetosWorks(){projetoId = 5, worksId = 5},            
         });
         }
 

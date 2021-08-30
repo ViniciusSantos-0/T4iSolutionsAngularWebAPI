@@ -36,9 +36,9 @@ namespace T4i_WebAPI.Data
 
             if (includeWorks)
             {
-                query = query.Include(pe => pe.projetoWorks)
+               query = query.Include(pe => pe.projetoWorks)
                              .ThenInclude(ad => ad.works)
-                             .ThenInclude(d => d.dev);
+                            .ThenInclude(d => d.dev);
             }
 
             query = query.AsNoTracking()
@@ -90,7 +90,7 @@ namespace T4i_WebAPI.Data
                 query = query.Include(p => p.works);
             }
 
-            query = query.AsNoTracking()
+           query = query.AsNoTracking()
                          .OrderBy(projeto => projeto.id)
                          .Where(projeto => projeto.works.Any(d =>
                             d.projetoWorks.Any(ad => ad.projetoId == projetoId)));
@@ -112,7 +112,7 @@ namespace T4i_WebAPI.Data
 
             return await query.ToArrayAsync();
         }
-        public async Task<Dev> GetDevAsyncById(int devId, bool includeWorks = true)
+        public async Task<Dev> GetDevAsyncById(int devid, bool includeWorks = true)
         {
             IQueryable<Dev> query = _context.dev;
 
@@ -123,7 +123,7 @@ namespace T4i_WebAPI.Data
 
             query = query.AsNoTracking()
                          .OrderBy(dev => dev.id)
-                         .Where(dev => dev.id == devId);
+                         .Where(dev => dev.id == devid);
 
             return await query.FirstOrDefaultAsync();
         }
