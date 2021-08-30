@@ -188,6 +188,9 @@ namespace T4i_WebAPI.Migrations
                     b.Property<int>("devid")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("equipe")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("id");
 
                     b.HasIndex("devid");
@@ -198,27 +201,32 @@ namespace T4i_WebAPI.Migrations
                         new
                         {
                             id = 1,
-                            devid = 2
+                            devid = 2,
+                            equipe = "Equipe A"
                         },
                         new
                         {
                             id = 2,
-                            devid = 3
+                            devid = 3,
+                            equipe = "Equipe B"
                         },
                         new
                         {
                             id = 3,
-                            devid = 5
+                            devid = 5,
+                            equipe = "Equipe C"
                         },
                         new
                         {
                             id = 4,
-                            devid = 8
+                            devid = 8,
+                            equipe = "Equipe E"
                         },
                         new
                         {
                             id = 5,
-                            devid = 9
+                            devid = 9,
+                            equipe = "Equipe D"
                         });
                 });
 

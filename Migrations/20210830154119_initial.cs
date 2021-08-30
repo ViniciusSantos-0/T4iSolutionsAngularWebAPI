@@ -40,6 +40,7 @@ namespace T4i_WebAPI.Migrations
                 {
                     id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    equipe = table.Column<string>(type: "TEXT", nullable: true),
                     devid = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
@@ -149,28 +150,28 @@ namespace T4i_WebAPI.Migrations
 
             migrationBuilder.InsertData(
                 table: "works",
-                columns: new[] { "id", "devid" },
-                values: new object[] { 1, 2 });
+                columns: new[] { "id", "devid", "equipe" },
+                values: new object[] { 1, 2, "Equipe A" });
 
             migrationBuilder.InsertData(
                 table: "works",
-                columns: new[] { "id", "devid" },
-                values: new object[] { 2, 3 });
+                columns: new[] { "id", "devid", "equipe" },
+                values: new object[] { 2, 3, "Equipe B" });
 
             migrationBuilder.InsertData(
                 table: "works",
-                columns: new[] { "id", "devid" },
-                values: new object[] { 3, 5 });
+                columns: new[] { "id", "devid", "equipe" },
+                values: new object[] { 3, 5, "Equipe C" });
 
             migrationBuilder.InsertData(
                 table: "works",
-                columns: new[] { "id", "devid" },
-                values: new object[] { 4, 8 });
+                columns: new[] { "id", "devid", "equipe" },
+                values: new object[] { 4, 8, "Equipe E" });
 
             migrationBuilder.InsertData(
                 table: "works",
-                columns: new[] { "id", "devid" },
-                values: new object[] { 5, 9 });
+                columns: new[] { "id", "devid", "equipe" },
+                values: new object[] { 5, 9, "Equipe D" });
 
             migrationBuilder.InsertData(
                 table: "pw",

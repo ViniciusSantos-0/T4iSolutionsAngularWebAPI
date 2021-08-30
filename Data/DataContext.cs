@@ -40,11 +40,11 @@ namespace T4i_WebAPI.Data
         });
             // Relacionamento one for n
             builder.Entity<Works>().HasData(new List<Works>(){
-            new Works(1,2),
-            new Works(2,3),
-            new Works(3,5),
-            new Works(4,8),
-            new Works(5,9),
+            new Works(1,2,"Equipe A"),
+            new Works(2,3,"Equipe B"),
+            new Works(3,5,"Equipe C"),
+            new Works(4,8,"Equipe E"),
+            new Works(5,9,"Equipe D"),
         });
             builder.Entity<ProjetosWorks>().HasData(new List<ProjetosWorks>(){
             new ProjetosWorks(){projetoId = 1, worksId = 1},
