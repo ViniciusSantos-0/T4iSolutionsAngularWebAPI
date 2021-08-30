@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace T4i_WebAPI.model
 {
     public class Works
@@ -16,5 +18,7 @@ namespace T4i_WebAPI.model
         public int idDev { get; set; }
 
         public Dev dev { get; set; }
+
+        public IEnumerable<ProjetosWorks> projetoWorks {get; set;}
     }
 }

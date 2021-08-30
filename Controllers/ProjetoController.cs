@@ -1,5 +1,6 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
+using T4i_WebAPI.Data;
 
 namespace T4i_WebAPI.Controllers
 {
@@ -7,18 +8,22 @@ namespace T4i_WebAPI.Controllers
     [Route("api/[controller]")]
     public class ProjetoController : ControllerBase
     {
-         [HttpGet]
+        public ProjetoController(IRepository repo)
+        {
+            repo = repo;
+        }
+        [HttpGet]
         public IActionResult Get()
-        {   
+        {
             try
-        {
-            return Ok("");
-        }
-        catch (Exception ex)
-        {
-            return BadRequest($"Erro: {ex.Message}");
-        }
-            
+            {
+                return Ok("");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro: {ex.Message}");
+            }
+
         }
     }
 }

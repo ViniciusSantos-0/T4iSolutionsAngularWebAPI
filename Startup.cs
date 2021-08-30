@@ -25,6 +25,7 @@ namespace T4i_WebAPI
                 x => x.UseSqlite(Configuration.GetConnectionString("DefaultConn"))
             );
             services.AddControllers();
+            services.AddScoped<IRepository, Repository>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "T4i_WebAPI", Version = "v1" });
