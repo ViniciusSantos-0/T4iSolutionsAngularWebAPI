@@ -6,13 +6,16 @@ namespace T4i_WebAPI.model
         {
             
         }
-        public Projeto( int id, string description)
+        public Projeto( int id, string name,string description)
         {        
             this.id = id;
+            this.name = name;
             this.description = description;
 
         }
         public int id { get; set; }
+
+         public string name { get; set; }
         public string description { get; set; }
     }
 }
