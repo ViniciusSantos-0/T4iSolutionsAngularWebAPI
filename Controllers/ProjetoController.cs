@@ -43,7 +43,6 @@ namespace T4i_WebAPI.Controllers
             {
                 return BadRequest($"Erro: {ex.Message}");
             }
-
         }
         [HttpGet("works/{worksId}")]
         public async Task<IActionResult> GetByWorksId(int worksId)
@@ -108,7 +107,7 @@ namespace T4i_WebAPI.Controllers
 
                 if (await _repo.SaveChangesAsync())
                 {
-                    return Ok("Deletado com sucesso!");
+                    return Ok(new{message = "Deletado com sucesso!"});
                 }
             }
             catch (Exception ex)

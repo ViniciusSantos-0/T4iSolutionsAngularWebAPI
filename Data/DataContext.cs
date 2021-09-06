@@ -47,10 +47,10 @@ namespace T4i_WebAPI.Data
             new Works(5,9,"Equipe D"),
         });
             builder.Entity<ProjetosWorks>().HasData(new List<ProjetosWorks>(){
-            new ProjetosWorks(){projetoId = 1, worksId = 1},
-            new ProjetosWorks(){projetoId = 2, worksId = 4},
-            new ProjetosWorks(){projetoId = 3, worksId = 3},
-            new ProjetosWorks(){projetoId = 4, worksId = 2},
+            new ProjetosWorks(){projetoId = 1, worksId = 2},
+            new ProjetosWorks(){projetoId = 2, worksId = 3},
+            new ProjetosWorks(){projetoId = 3, worksId = 5},
+            new ProjetosWorks(){projetoId = 4, worksId = 4},
             new ProjetosWorks(){projetoId = 5, worksId = 5},            
         });
         }

@@ -20,7 +20,7 @@ namespace T4i_WebAPI.model
         public int devid { get; set; }
 
         public Dev dev { get; set; }
-
+       
         public IEnumerable<ProjetosWorks> projetoWorks { get; set; }
     }
 }

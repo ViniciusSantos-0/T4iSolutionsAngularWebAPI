@@ -78,7 +78,7 @@ namespace T4i_WebAPI.Controllers
             return BadRequest();
 
         }
-       
+
         [HttpPut("{id}")]
         public async Task<IActionResult> put(int id, Dev model)
         {
@@ -97,7 +97,7 @@ namespace T4i_WebAPI.Controllers
             {
                 return BadRequest($"Erro: {ex.Message}");
             }
-            return BadRequest("nu sei");
+            return BadRequest();
         }
 
         [HttpDelete("{idDev}")]
@@ -111,7 +111,7 @@ namespace T4i_WebAPI.Controllers
                 _repo.Delete(dev);
                 if (await _repo.SaveChangesAsync())
                 {
-                    return Ok("Deletado com sucesso!");
+                    return Ok(new { message = "Deletado com sucesso!" });
                 }
             }
             catch (Exception ex)

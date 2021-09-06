@@ -63,6 +63,7 @@ namespace T4i_WebAPI.Data
 
             return await query.FirstOrDefaultAsync();
         }
+      // public async Task<Works[]> GetAllWorksAsyncByProjetos(bool includeWorks){}
         public async Task<Projeto[]> GetProjetosAsyncByWorksId(int worksId, bool includeWorks)
         {
             IQueryable<Projeto> query = _context.projetos;
